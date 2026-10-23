@@ -1,77 +1,108 @@
-# Food Delivery System
+# 🍔 Food Delivery System
 
-A modern Python-based food delivery simulation built with Object-Oriented Programming (OOP) principles. This project demonstrates how a food ordering platform can be modeled using classes, inheritance, encapsulation, and polymorphism in a clean and understandable way.
+<div align="center">
 
-The repository includes:
-- a core business logic layer for customers, restaurants, orders, and delivery partners
-- a Streamlit-based interactive interface for end-to-end demo usage
-- a sample script showing the order and delivery flow
-- a Jupyter Notebook version for experimentation and presentation
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![OOP](https://img.shields.io/badge/Paradigm-OOP-6E9F18?style=for-the-badge)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 
-## Project Overview
+</div>
 
-This system models a simplified food delivery workflow where a customer can:
-- create an account
-- add money to a wallet
-- browse a restaurant menu
-- place an order
-- receive an OTP for delivery verification
+A clean and beginner-friendly food delivery management project built in Python using Object-Oriented Programming (OOP). It simulates the core flow of a real food ordering system, including customer registration, wallet balance management, restaurant menu browsing, ordering, delivery partner assignment, and OTP-based delivery verification.
 
-A delivery partner can:
-- register as available for delivery
-- accept assigned orders
-- deliver the order after OTP verification
+This project is designed for learning, demonstration, and academic use. It highlights important OOP principles such as abstraction, inheritance, encapsulation, and polymorphism in a practical business scenario.
 
-## Features
+## 🎯 Project Objectives
 
-- Customer wallet management
-- Restaurant menu with veg/non-veg item classification
-- Order creation with automatic order ID generation
-- GST and packaging fee calculation
-- Estimated delivery time
-- OTP-based delivery validation
-- Order status tracking: Placed → Accepted → Delivered
-- Interactive UI built with Streamlit
+- To model a simplified real-world food delivery process in Python.
+- To apply OOP concepts in a practical and understandable project.
+- To build a customer-facing and partner-facing order workflow.
+- To demonstrate order management, billing logic, and delivery verification.
+- To provide a user-friendly UI using Streamlit for easy interaction.
+- To support learning for students, beginners, and project showcases.
 
-## Tech Stack
+## 🌟 Key Features
 
-- Python 3
-- Streamlit
-- Object-Oriented Programming (OOP)
-- Jupyter Notebook
+- 👤 Customer profile creation with name, phone number, and delivery address
+- 💰 Wallet-based payment simulation
+- 🍽️ Restaurant menu with veg and non-veg item listing
+- 🛒 Order placement with selected food items
+- 📊 Automatic bill calculation including GST and packaging fee
+- ⏱️ Estimated delivery time display
+- 🔐 OTP-based order delivery verification
+- 🚚 Delivery partner registration and order acceptance
+- 📦 Order status tracking: Placed → Accepted → Delivered
+- 🧠 Clean OOP class design for maintainability
+- 🖥️ Interactive Streamlit dashboard for user experience
 
-## Repository Structure
+## 🏗️ System Overview
+
+The project represents a simplified food delivery ecosystem with the following core components:
+
+- Customer: places orders, adds money to wallet, and tracks order history
+- Delivery Partner: accepts and delivers orders
+- Restaurant: stores menu items and restaurant information
+- MenuItem: defines each food item and its properties
+- Order: stores items, status, amount, and OTP
+- User: abstract base class shared by both customer and delivery partner
+
+## 🧩 Core Classes and Responsibilities
+
+| Class | Description |
+| --- | --- |
+| `User` | Abstract base class for shared user properties like name, phone, and wallet balance |
+| `Customer` | Handles customer details, wallet top-up, order creation, and notifications |
+| `DeliveryPartner` | Represents the delivery executive responsible for accepting and completing deliveries |
+| `Restaurant` | Stores restaurant name, location, and menu items |
+| `MenuItem` | Represents a food item with name, price, and vegetarian status |
+| `Order` | Stores order details, calculates total amount, and verifies delivery OTP |
+
+## 🔍 OOP Concepts Implemented
+
+- Abstraction: `User` is an abstract class that defines common behavior.
+- Inheritance: `Customer` and `DeliveryPartner` inherit from `User`.
+- Encapsulation: attributes such as wallet balance, order status, and OTP are protected using method-based management.
+- Polymorphism: `notify()` and `display_profile()` are implemented differently in subclass objects.
+
+## 🧭 Project Workflow
+
+1. Customer creates an account and provides delivery details.
+2. Customer adds wallet balance.
+3. User browses the restaurant menu.
+4. Customer selects food items and places the order.
+5. System calculates subtotal, GST, packaging fee, and final total.
+6. Delivery partner accepts the order.
+7. OTP is validated before the order is marked as delivered.
+8. Final status is updated and order completion is confirmed.
+
+## 📁 Repository Structure
 
 ```text
 Food-Delivery-System/
-├── app.py                     # Streamlit UI for the food delivery app
-├── food_delivery.py           # Core OOP logic and class definitions
-├── demo (2).py                # Demo script showcasing the workflow
-├── Food_Delivery_System.ipynb # Jupyter notebook version of the project
-├── Requirements.txt           # Python dependencies
+├── app.py                     # Streamlit interface for running the app
+├── food_delivery.py           # Core OOP logic and classes
+├── demo (2).py                # Demo script for order flow simulation
+├── Food_Delivery_System.ipynb # Notebook version of the project
+├── Requirements.txt           # Python package requirements
 ├── README.md                 # Project documentation
-└── .gitignore                # Git ignore file (if present in repo)
+└── .gitignore                # Git ignore settings
 ```
 
-## Core Classes
+## 🛠️ Tech Stack
 
-The system is structured around the following classes:
+- Python 3
+- Streamlit
+- Jupyter Notebook
+- Object-Oriented Programming (OOP)
 
-- `User` - Abstract base class with shared user properties like name, phone, and wallet balance
-- `Customer` - Represents the end user who places orders and manages wallet funds
-- `DeliveryPartner` - Represents a courier/delivery agent who accepts and validates deliveries
-- `Restaurant` - Holds restaurant details and a menu list
-- `MenuItem` - Represents a food item with name, price, and vegetarian status
-- `Order` - Handles order ID, bill calculation, status tracking, and OTP verification
+## 🚀 Getting Started
 
-## OOP Concepts Demonstrated
+### Prerequisites
 
-- Abstraction: `User` is defined as an abstract class
-- Inheritance: `Customer` and `DeliveryPartner` inherit from `User`
-- Encapsulation: private/protected attributes are managed through methods
-- Polymorphism: `notify()` and `display_profile()` behave differently for different user types
-
-## How to Run
+- Python 3.8 or above
+- pip package manager
+- Basic understanding of Python syntax
 
 ### 1. Clone the Repository
 
@@ -98,58 +129,81 @@ streamlit run app.py
 python "demo (2).py"
 ```
 
-## Example Workflow
+## 💡 Sample Usage Example
 
-1. Create a customer and assign a delivery address
-2. Add wallet balance
-3. Browse the restaurant menu
-4. Place an order for selected items
-5. Generate the order bill with GST and packaging fee
-6. Delivery partner accepts the order
-7. OTP is verified to complete the delivery
+```python
+restaurant = Restaurant("Spice Hub", "Aurangabad")
+restaurant.add_item(MenuItem("Paneer Tikka", 180, True))
+restaurant.add_item(MenuItem("Chicken Biryani", 250, False))
 
-## Sample Order Calculation
+customer = Customer("Aman", "9876543210", "CIDCO, Aurangabad")
+partner = DeliveryPartner("Rahul", "9123456780", "Bike")
 
-The project calculates total cost as:
+customer.add_to_wallet(500)
+order = customer.place_order(restaurant, restaurant.get_menu())
 
-```text
-Subtotal + GST (5%) + Packaging Fee (₹20)
+print("Total bill:", order.calculate_bill())
+print("ETA:", order.estimated_time(), "minutes")
+
+partner.accept_order(order)
+partner.deliver(order, 1234)
+customer.notify("Order delivered")
 ```
 
-Example:
+## 🧾 Billing Logic
+
+The system calculates the order total using:
+
+```text
+Subtotal + 5% GST + ₹20 Packaging Fee
+```
+
+For example:
 
 ```text
 Subtotal: ₹500
 GST: ₹25
-Packaging: ₹20
-Total: ₹545
+Packaging Fee: ₹20
+Final Total: ₹545
 ```
 
-## Benefits of the Project
+## ✅ Benefits of This Project
 
-- Clear understanding of real-world object modeling in Python
-- Good beginner-friendly example of OOP concepts
-- Easy to extend for features like inventory management, order history, and admin controls
-- Suitable for academic projects, demos, and interviews
+- Easy to understand for beginners
+- Strong demonstration of Python OOP concepts
+- Realistic workflow for food-ordering business logic
+- Can be expanded into a full-stack or database-backed version
+- Suitable for academic projects, practical labs, and interviews
 
-## Future Enhancements
+## 🚀 Future Enhancements
 
 - Randomized OTP generation per order
-- Automatic partner assignment based on availability
-- Order cancellation and additional order states
-- Ratings and reviews
-- Database storage for persistent records
-- Unit tests with `pytest`
-- Admin dashboard for restaurant management
+- Real-time order tracking page
+- Online payment simulation
+- Restaurant admin panel
+- Automatic delivery partner assignment
+- Order cancellation and rescheduling
+- Rating and review system
+- Database integration using SQLite or MySQL
+- Unit testing with `pytest`
+- API-based backend support
 
-## License
+## 📌 Project Highlights
 
-This project is currently distributed without a formal license declaration. If you want to publish it publicly, consider adding an appropriate open-source license such as MIT.
+- Beginner-friendly architecture
+- Clean modular class design
+- Visual demo through Streamlit
+- Strong educational value
+- Easy to extend with additional features
 
-## Author
+## 📝 License
+
+This project is currently shared without a formal license declaration. If you plan to publish it publicly or share it commercially, adding an open-source license such as MIT is recommended.
+
+## 👨‍💻 Author
 
 Ambika1794
 
-## Contact
+## 📬 Contact
 
-For questions or suggestions, feel free to reach out through the GitHub repository.
+Feel free to reach out through the GitHub repository for suggestions, improvements, or collaboration opportunities.
